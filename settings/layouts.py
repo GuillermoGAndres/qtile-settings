@@ -14,15 +14,15 @@ layout_conf = {
     'margin': 3
 }
 
-layouts = [
+layouts = [    
     layout.Max(**layout_conf),
-    layout.Stack(num_stack=2, **layout_conf),
-    layout.MonadTall(**layout_conf),
-    layout.MonadWide(**layout_conf),
-    layout.Bsp(**layout_conf),
-    layout.Matrix(columns=2, **layout_conf),
-    layout.RatioTile(**layout_conf),
-    # layout.Columns(),
+    layout.Stack(num_stack=2, margin=5, border_width=1, border_focus=colors['focus'][0]),
+    layout.MonadTall(margin=10, border_width=1,border_focus=colors['focus'][0]),
+    layout.MonadWide(margin=10, border_width=1,border_focus=colors['focus'][0]),
+    layout.RatioTile(**layout_conf),   
+    # layout.Matrix(columns=2, **layout_conf),
+    layout.Columns(num_columns=1, margin=20, split=False, border_width=5,border_focus=colors['focus'][0]),
+    # layout.Bsp(**layout_conf),
     # layout.Tile(),
     # layout.TreeTab(),
     # layout.VerticalTile(),

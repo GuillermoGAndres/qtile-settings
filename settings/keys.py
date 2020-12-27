@@ -10,7 +10,7 @@ from libqtile.config import Key
 from libqtile.command import lazy
 
 
-mod = "mod4"
+mod = "mod4" # Tecla de windows
 
 keys = [Key(key[0], key[1], *key[2:]) for key in [
     # ------------ Window Configs ------------
@@ -28,7 +28,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # Toggle floating
     ([mod, "shift"], "f", lazy.window.toggle_floating()),
 
-    # Move windows up or down in current stack
+    # Move windows up or down in current toggle (stack)
     ([mod, "shift"], "j", lazy.layout.shuffle_down()),
     ([mod, "shift"], "k", lazy.layout.shuffle_up()),
 
@@ -53,11 +53,13 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod], "Tab", lazy.layout.next()),
     ([mod, "shift"], "Tab", lazy.layout.up()),
 
-    #Swap pane of split stack
+    #Swap pane of split (stack)
     ([mod, "shift"], "space", lazy.layout.rotate()),
 
-    # Toggle betwenn split stack
+    # Split (stack)
     ([mod, "shift"], "Return", lazy.layout.toggle_split()),
+
+    # Change workspace
     ([mod],"Right", lazy.screen.next_group()),
     ([mod], "Left", lazy.screen.prev_group()),
     # ------------ App Configs ------------
@@ -72,13 +74,14 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod], "f", lazy.spawn("firefox")),
 
     # File Explorer
-    ([mod], "e", lazy.spawn("pcmanfm")),
+    # ([mod], "e", lazy.spawn("pcmanfm")),
+    ([mod], "e", lazy.spawn("thunar")),
 
     # Terminal
     ([mod], "Return", lazy.spawn("alacritty")),
 
-    # Redshift
-    ([mod], "r", lazy.spawn("redshift -O 2400")),
+    # Redshift (cambia el brillo a modo-lectura para las noches)
+    ([mod], "r", lazy.spawn("redshift -O 4400")),
     ([mod, "shift"], "r", lazy.spawn("redshift -x")),
 
     # Screenshot
