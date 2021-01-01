@@ -1,6 +1,6 @@
-# Antonio Sarosi
-# https://youtube.com/c/antoniosarosi
 # https://github.com/antoniosarosi/dotfiles
+# https://gist.github.com/cjbarnes18/4151805
+
 
 from libqtile import layout
 from settings.theme import colors
@@ -16,12 +16,12 @@ layout_conf = {
 
 layouts = [    
     layout.Max(**layout_conf),
-    layout.Stack(num_stack=2, margin=5, border_width=1, border_focus=colors['focus'][0]),
-    layout.MonadTall(margin=10, border_width=1,border_focus=colors['focus'][0]),
+    layout.Columns(num_columns=1, margin=20, split=False, border_width=5,border_focus=colors['focus'][0]),
     layout.MonadWide(margin=10, border_width=1,border_focus=colors['focus'][0]),
     layout.RatioTile(**layout_conf),   
+    layout.MonadTall(margin=10, border_width=1,border_focus=colors['focus'][0]),
     # layout.Matrix(columns=2, **layout_conf),
-    layout.Columns(num_columns=1, margin=20, split=False, border_width=5,border_focus=colors['focus'][0]),
+    layout.Stack(num_stack=2, margin=6, border_width=0, border_focus=colors['focus'][0]),
     # layout.Bsp(**layout_conf),
     # layout.Tile(),
     # layout.TreeTab(),
